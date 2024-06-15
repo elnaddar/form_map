@@ -1,6 +1,7 @@
-# from_map
+# form_map
 
-A package to make it easy to get/post information to/from form.
+`form_map` is a lightweight and easy-to-use Flutter package designed to simplify the process of handling form data. With `form_map`, you can effortlessly get and post information to and from forms using enums, making your code more organized and readable.
+
 
 ## Features
 
@@ -10,11 +11,11 @@ A package to make it easy to get/post information to/from form.
 
 ## Getting started
 
-To use this package, add `from_map` to your `pubspec.yaml` file:
+To use this package, add `form_map` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  from_map: ^0.0.1
+  form_map: ^0.0.3
 ```
 
 ## Usage
@@ -23,7 +24,7 @@ Here is a basic example of how to use the `FormMap` class:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:from_map/from_map.dart';
+import 'package:form_map/form_map.dart';
 
 enum FormFields { name, email }
 
