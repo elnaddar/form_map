@@ -1,6 +1,6 @@
 name: form_map
 description: "form_map is a lightweight and easy-to-use Flutter package designed to simplify the process of handling form data. With form_map, you can effortlessly get and post information to and from forms using enums, making your code more organized and readable."
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/elnaddar/form_map
 
 environment:
@@ -17,3 +17,11 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
+
+platforms:
+  android:
+  ios:
+  web:
+  linux:
+  macos:
+  windows:
