@@ -1,3 +1,14 @@
+## [0.1.0] - 2024-06-16
+### Added
+- Introduced a new `saveBeforeValidate` parameter to the `submit` method in the `FormMap` class.
+  - If `saveBeforeValidate` is true, the form state is saved before validation.
+- Added documentation for public API elements to improve code readability and usability.
+
+### Changed
+- Optimized the `submit` method in the `FormMap` class to ensure null safety.
+  - The function now checks if the form state is null before proceeding.
+- Changed package description.
+
 ## [0.0.3] - 2024-06-15
 ### Added
 - Added MIT license to `pubspec.yaml`.
