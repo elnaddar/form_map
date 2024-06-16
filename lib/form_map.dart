@@ -47,7 +47,13 @@ class FormMap<T extends Enum> {
     return data;
   }
 
-  void submit(void Function(Map<String, dynamic> data) onSubmit) {
+  void submit(
+    void Function(Map<String, dynamic> data) onSubmit, {
+    bool saveBeforeValidate = false,
+  }) {
+    if (saveBeforeValidate) {
+      key.currentState!.save();
+    }
     if (key.currentState!.validate()) {
       key.currentState!.save();
       onSubmit(dataMap);
