@@ -65,15 +65,28 @@ class FormMap<T extends Enum> {
   /// Submits the form data, calling [onSubmit] with the data map.
   ///
   /// If [saveBeforeValidate] is true, the form state is saved before validation.
+  /// Otherwise, the form state is saved only if the form is valid.
+  ///
+  /// If the form state is null, the function returns early without performing any action.
+  ///
+  /// - [onSubmit]: A callback function that is called with the form data if the form is valid.
+  /// - [saveBeforeValidate]: A boolean flag indicating whether to save the form state before validation.
   void submit(
     void Function(Map<String, dynamic> data) onSubmit, {
     bool saveBeforeValidate = false,
   }) {
+    final currentState = key.currentState;
+    if (currentState == null) return;
+
     if (saveBeforeValidate) {
-      key.currentState!.save();
+      currentState.save();
     }
-    if (key.currentState!.validate()) {
-      key.currentState!.save();
+
+    final isValid = currentState.validate();
+    if (isValid) {
+      if (!saveBeforeValidate) {
+        currentState.save();
+      }
       onSubmit(dataMap);
     }
   }
